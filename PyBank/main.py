@@ -17,7 +17,7 @@ Count = 0
 ProfitBeginningPeriod = 0
 
 # Set path for file
-csvpath = os.path.join("Resources", "budget_data.txt")
+csvpath = os.path.join("Resources", "budget_data.csv")
 with open(csvpath) as csvfile:
     csvreader = csv.reader(csvfile, delimiter=',')
     header = next(csvreader)
@@ -78,7 +78,7 @@ with open(output_path, 'w') as textfile:
     #textfile.write("\n\n\n\n")
     textfile.write("Total: $" + str(TotalProfit) + "\n\n\n\n")
     #textfile.write("\n\n\n\n")
-    textfile.write("Average Change: " + "\n\n\n\n")
+    textfile.write("Average Change: $" + str(round(ChangeEntirePeriod / (TotalMonths - 1), 2)) + "\n\n\n\n")
     #textfile.write("\n\n\n\n")
     textfile.write("Greatest Increase in Profits: " + str(GreatestMonthlyIncreaseMonth) + " ($" + str(GreatestMonthlyIncrease) + ")" + "\n\n\n\n")
     #textfile.write("\n\n\n\n")
