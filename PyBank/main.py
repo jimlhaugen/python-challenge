@@ -5,7 +5,7 @@ import csv
 
 months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec']
 TotalMonths = 0
-TotalProfit = 0
+TotalProfit = 0 
 GreatestMonthlyIncrease = 0
 GreatestMonthlyDecrease = 0
 MonthlyChange = 0
