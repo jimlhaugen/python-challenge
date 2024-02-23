@@ -1,0 +1,106 @@
+import os
+import csv
+
+ ################################################################################  
+
+
+
+######  complete list of candidates receiving votes
+CandidateName = ['Charles Casper Stockham','Diana DeGette','Raymon Anthony Doane']
+TotalVotes = 0
+TotalProfitLoss = 0
+VoteCountCandidate1 = 0
+VoteCountCandidate2 = 0
+VoteCountCandidate3 = 0
+CandidateName1 = 0
+CandidateName2 = 0
+CandidateName3 = 0
+CarryForwardMonthProfit = 0
+GreatestMonthlyIncreaseMonth = '' 
+GreatestMonthlyDecreaseMonth = '' 
+ChangeEntirePeriod = 0
+Count = 0
+ProfitBeginningPeriod = 0
+
+# Set path for file
+csvpath = os.path.join("Resources", "election_data.csv")
+with open(csvpath) as csvfile:
+    csvreader = csv.reader(csvfile, delimiter=',')
+    header = next(csvreader)
+    
+    for row in csvreader:
+        vote = row[0]
+        county = row[1]
+        candidate = row[2]
+
+        if row[2] in CandidateName:
+            TotalVotes = TotalVotes + 1
+            #print("total votes", TotalVotes)
+            #TotalProfitLoss = TotalProfitLoss + int(profit)
+            #Count = Count + 1
+            #if Count == 1:
+            #    ProfitBeginningPeriod = int(profit)
+
+            #MonthlyChange = int(profit) - CarryForwardMonthProfit 
+            if candidate == 'Charles Casper Stockham':            
+            #if CandidateName == 'Charles Casper Stockham':
+                VoteCountCandidate1 = VoteCountCandidate1 + 1 
+                #print(VoteCountCandidate1)
+            if candidate == 'Diana DeGette':            
+            #if CandidateName == 'Diana DeGette':
+                VoteCountCandidate2 = VoteCountCandidate2 + 1
+                #print(VoteCountCandidate2) 
+            if candidate == 'Raymon Anthony Doane':
+            #if CandidateName == 'Raymon Anthony Doane':
+                VoteCountCandidate3 = VoteCountCandidate3 + 1 
+                #print(VoteCountCandidate3)
+
+            
+        if((VoteCountCandidate1 > VoteCountCandidate2) and (VoteCountCandidate1 > VoteCountCandidate3)): 
+            Winner = CandidateName[0]
+        elif((VoteCountCandidate2 > VoteCountCandidate1) and (VoteCountCandidate2 > VoteCountCandidate3)): 
+            Winner = CandidateName[1]
+        else:
+            Winner = CandidateName[2]
+        
+        def percent(num1, num2):
+            num1 = float(num1)
+            num2 = float(num2)
+            percentage = "{:.3%}".format(num1 / num2)
+            return percentage
+  
+print("Election Results" + "\n\n\n\n")
+print("-" * 25 + "\n\n\n\n")
+print("Total Votes:", TotalVotes, "\n\n\n\n")
+print("-" * 25 + "\n\n\n\n")
+print(CandidateName[0], ": ", percent(VoteCountCandidate1, TotalVotes), " (", VoteCountCandidate1, ")", "\n\n\n\n", sep='')
+print(CandidateName[1], ": ", percent(VoteCountCandidate2, TotalVotes), " (", VoteCountCandidate2, ")", "\n\n\n\n", sep='')
+print(CandidateName[2], ": ", percent(VoteCountCandidate3, TotalVotes), " (", VoteCountCandidate3, ")", "\n\n\n\n", sep='')
+
+print("-" * 25 + "\n\n\n\n")
+print("Winner: " + Winner + "\n\n\n\n")
+print("-" * 25)
+
+###########################################################################
+
+# Specify the file to write to
+output_path = os.path.join("output.txt")
+
+# Open the file using "write" mode. Specify the variable to hold the contents
+#with open(output_path, 'w') as textfile:
+
+#    textfile.write("Election Results" + "\n\n\n\n")
+
+ #   textfile.write("-" * 25 + "\n\n\n\n")
+
+ #   textfile.write("Total Votes: " + str(TotalVotes) + "\n\n\n\n")
+
+  #  textfile.write("-" * 25 + "\n\n\n\n")
+
+   # textfile.write(CandidateName1, ":", + str(VoteCountCandidate1) + "\n\n\n\n")
+
+   # textfile.write("VoteCountCandidate1: " + "\n\n\n\n") python main.py
+
+ #   textfile.write("Greatest Increase in Profits: " + str(VoteCountCandidate1) + " ($" + str(VoteCountCandidate1) + ")" + "\n\n\n\n")
+
+  #  textfile.write("Greatest Decrease in Profits: " + str(VoteCountCandidate1) + " ($" + str(VoteCountCandidate1) + ")"
