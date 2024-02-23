@@ -7,6 +7,7 @@ import csv
 
 ######  complete list of candidates receiving votes
 CandidateName = ['Charles Casper Stockham','Diana DeGette','Raymon Anthony Doane']
+CandidateVoteCount = [0, 0, 0]
 TotalVotes = 0
 TotalProfitLoss = 0
 VoteCountCandidate1 = 0
@@ -35,41 +36,40 @@ with open(csvpath) as csvfile:
 
         if row[2] in CandidateName:
             TotalVotes = TotalVotes + 1
-            #print("total votes", TotalVotes)
-            #TotalProfitLoss = TotalProfitLoss + int(profit)
-            #Count = Count + 1
-            #if Count == 1:
-            #    ProfitBeginningPeriod = int(profit)
 
-            if candidate == CandidateName[0]:            
-                VoteCountCandidate1 = VoteCountCandidate1 + 1 
-            if candidate == CandidateName[1]:            
-                VoteCountCandidate2 = VoteCountCandidate2 + 1
-            if candidate == CandidateName[2]:
-                VoteCountCandidate3 = VoteCountCandidate3 + 1 
+            #if candidate == CandidateName[0]:            
+            #    VoteCountCandidate1 = VoteCountCandidate1 + 1 
+            #if candidate == CandidateName[1]:            
+            #    VoteCountCandidate2 = VoteCountCandidate2 + 1
+            #if candidate == CandidateName[2]:
+            #    VoteCountCandidate3 = VoteCountCandidate3 + 1 
+            for x in range(3):
+                if candidate == CandidateName[x]:            
+                    CandidateVoteCount[x] += 1 
+           # if candidate == CandidateName[1]:            
+             #   CandidateVoteCount[1] += 1 
+           # if candidate == CandidateName[2]:
+          #      CandidateVoteCount[2] += 1 
 
-            
-        if((VoteCountCandidate1 > VoteCountCandidate2) and (VoteCountCandidate1 > VoteCountCandidate3)): 
+        if((CandidateVoteCount[0] > CandidateVoteCount[1]) and (CandidateVoteCount[0] > CandidateVoteCount[2])): 
             Winner = CandidateName[0]
-        elif((VoteCountCandidate2 > VoteCountCandidate1) and (VoteCountCandidate2 > VoteCountCandidate3)): 
+        elif((CandidateVoteCount[1] > CandidateVoteCount[0]) and (CandidateVoteCount[1] > CandidateVoteCount[2])): 
             Winner = CandidateName[1]
         else:
             Winner = CandidateName[2]
         
-        def percent(num1, num2):
-            num1 = float(num1)
-            num2 = float(num2)
-            percentage = "{:.3%}".format(num1 / num2)
-            return percentage
+def percent(num1, num2):
+    num1 = float(num1)
+    num2 = float(num2)
+    percentage = "{:.3%}".format(num1 / num2)
+    return percentage
   
 print("Election Results" + "\n\n\n\n")
 print("-" * 25 + "\n\n\n\n")
 print("Total Votes:", TotalVotes, "\n\n\n\n")
 print("-" * 25 + "\n\n\n\n")
-print(CandidateName[0], ": ", percent(VoteCountCandidate1, TotalVotes), " (", VoteCountCandidate1, ")", "\n\n\n\n", sep='')
-print(CandidateName[1], ": ", percent(VoteCountCandidate2, TotalVotes), " (", VoteCountCandidate2, ")", "\n\n\n\n", sep='')
-print(CandidateName[2], ": ", percent(VoteCountCandidate3, TotalVotes), " (", VoteCountCandidate3, ")", "\n\n\n\n", sep='')
-
+for y in range(3):
+    print(CandidateName[y], ": ", percent(CandidateVoteCount[y], TotalVotes), " (", CandidateVoteCount[y], ")", "\n\n\n\n", sep='')
 print("-" * 25 + "\n\n\n\n")
 print("Winner: " + Winner + "\n\n\n\n")
 print("-" * 25)
