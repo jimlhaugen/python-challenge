@@ -65,7 +65,7 @@ print("Greatest Decrease in Profits: ", GreatestMonthlyDecreaseMonth," ($", Grea
 ###########################################################################
 
 # Specify the file to write to
-output_path = os.path.join("output.txt")
+output_path = os.path.join("analysis","results.txt")
 
 # Open the file using "write" mode. Specify the variable to hold the contents
 with open(output_path, 'w') as textfile:
