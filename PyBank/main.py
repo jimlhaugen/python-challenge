@@ -49,11 +49,6 @@ with open(csvpath) as csvfile:
         ChangeEntirePeriod = ProfitEndPeriod - ProfitBeginningPeriod 
 
 
-
-
-            
-
-
 print("Financial Analysis" + "\n\n\n\n")
 print("-" * 28 + "\n\n\n\n")
 print("Total Months: ", TotalMonths, "\n\n\n\n")
