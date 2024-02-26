@@ -3,18 +3,18 @@
 import os
 import csv
 
-                ### Initialize strings list string of months
+                ### Initialize strings list of months
 months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec']
 
                 ### Initialize strings variables for recording months of greatest increase/decreases 
 GreatestMonthlyIncreaseMonth = '' # records month of greatest monthly increase upon its condition
 GreatestMonthlyDecreaseMonth = '' # records month of greatest monthly increase upon its condition
 
-                ### Initialize numerical numerical variables subjected to loops
+                ### Initialize numerical variables subjected to loops
 TotalMonths = 0                     # keeps count of months by counting each rows with each loop interation
 TotalProfitLoss = 0                 # keeps running cumulation of total profit/loss with each interation
 GreatestMonthlyIncrease = 0         # records greatest monthly increase upon its condition
-GreatestMonthlyDecrease = 0         # records greatest monthly decerease upon its condition
+GreatestMonthlyDecrease = 0         # records greatest monthly decrease upon its condition
 MonthlyChange = 0                   # records monthly change between successive interations of loop
 CarryFwdMonthProfitLoss = 0         # carries forward cumulative profit/loss to the next iterantion of loop  
 ProfitLosssBeginningPeriod = 0      # records the first month profit/loss data
@@ -31,7 +31,7 @@ with open(csvpath) as csvfile:
                 ### Skip the header rwo
     header = next(csvreader)
 
-                ### Reads each row of csvreader after the header orginally presented in the .csv file 
+                ### Reads each row of csvreader after the header originally presented in the .csv file 
                 ### For each row in csvreader, column 1 (or index 0 of list months) equals month
                 ### For each row in csvreader, column 2 (or index 1 of list months) equals profit (i.e., profit/loss)        
     for row in csvreader:
@@ -69,12 +69,12 @@ with open(csvpath) as csvfile:
                 ### Records current profit/loss and used above
             CarryFwdMonthProfitLoss = int(profit)
   
-        ProfitEndPeriod = CarryFwdMonthProfitLoss   # using different varaible to distinguish functionalities                
+        ProfitEndPeriod = CarryFwdMonthProfitLoss   # using different variable to distinguish functionalities                
 
                 ### Determines accumulative change of profit/loss data for all rows 
         ChangeEntirePeriod = ProfitEndPeriod - ProfitLosssBeginningPeriod 
 
-                ### Prints to temrinal in instructed format
+                ### Prints to terminal in instructed format
 print("Financial Analysis" + "\n\n\n\n")
 print("-" * 28 + "\n\n\n\n")
 print("Total Months: ", TotalMonths, "\n\n\n\n")
