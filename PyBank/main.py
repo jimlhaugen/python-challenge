@@ -17,7 +17,7 @@ Count = 0
 ProfitBeginningPeriod = 0
 
 # Set path for file
-csvpath = os.path.join("Resources", "budget_data.csv")
+csvpath = os.path.join("Resources", "budget_data - Copy.csv")
 with open(csvpath) as csvfile:
     csvreader = csv.reader(csvfile, delimiter=',')
     header = next(csvreader)
@@ -60,7 +60,7 @@ print("Greatest Decrease in Profits: ", GreatestMonthlyDecreaseMonth," ($", Grea
 ###########################################################################
 
 # Specify the file to write to
-output_path = os.path.join("analysis","results_temp.txt")
+output_path = os.path.join("analysis","results_temp2.txt")
 
 # Open the file using "write" mode. Specify the variable to hold the contents
 with open(output_path, 'w') as textfile:
