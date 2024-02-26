@@ -29,7 +29,7 @@ with open(csvpath) as csvfile:
         else:
             Winner = CandidateName[2]
         
-def percent(num1, num2):
+def percent(num1, num2): 
     percentage = "{:.3%}".format(num1 / num2)
     return percentage
   
