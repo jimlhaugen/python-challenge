@@ -14,8 +14,6 @@ with open(csvpath) as csvfile:
     header = next(csvreader)
     
     for row in csvreader:
-        vote = row[0]
-        county = row[1]
         candidate = row[2]
 
         if row[2] in CandidateName:
