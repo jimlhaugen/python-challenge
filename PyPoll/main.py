@@ -1,9 +1,6 @@
+
 import os
 import csv
-
- ################################################################################  
-
-
 
 ######  complete list of candidates receiving votes
 CandidateName = ['Charles Casper Stockham','Diana DeGette','Raymon Anthony Doane']
@@ -11,7 +8,7 @@ CandidateVoteCount = [0, 0, 0]
 TotalVotes = 0
 
 # Set path for file
-csvpath = os.path.join("Resources", "election_data.csv")
+csvpath = os.path.join("Resources", "election_data_sub.csv")
 with open(csvpath) as csvfile:
     csvreader = csv.reader(csvfile, delimiter=',')
     header = next(csvreader)
@@ -53,14 +50,14 @@ print("-" * 25)
 ###########################################################################
 
 # Specify the file to write to
-output_path = os.path.join("output.txt")
+output_path = os.path.join("analysis", "output_sub.txt")
 
 # Open the file using "write" mode. Specify the variable to hold the contents
 with open(output_path, 'w') as textfile:
 
     textfile.write("Election Results" + "\n\n\n\n")
     textfile.write("-" * 25 + "\n\n\n\n")
-    textfile.write("Total Votes:" + str(TotalVotes) + "\n\n\n\n")
+    textfile.write("Total Votes: " + str(TotalVotes) + "\n\n\n\n")
     textfile.write("-" * 25 + "\n\n\n\n")
 
     for z in range(3):
