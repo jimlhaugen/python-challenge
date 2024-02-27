@@ -2,7 +2,7 @@
 
 This module comprises two challenges.  This challenge named "PyPoll" presents a real-world situation of helping a small, rural town modernize its vote-counting process.  Poll data is provided in a dataset called bedget_data.csv comprising three columns with “Ballot ID,” “County,” and “Candidate” headers and a plethora of rows, where each row represents one vote.  A quick review of the data reveals each row of the Candidate column consists of three candidate names: Charles Casper Stockham, Diana DeGette, and Raymon Anthony Doane.  
 
-A challenge named "PyBank" of the Module 3 Challenge in which a real-world situation in which a financial dataset is employed may be found under the PyPoll directory.
+A challenge named "PyBank" of the Module 3 Challenge in which a real-world situation in which a financial dataset is employed may be found under the PyBank directory.
 
 ## PyPoll Instructions
 
@@ -37,3 +37,4 @@ Thirdly, a for loop consisting of three iterations is presented in which the nam
 
 Fourthly, after all rows have been analyzed upon the completion of the row loop iterations, the winning candidate can be determined by comparing the number of votes received by each candidate to determine which candidate has the greatest number of votes.
 
+Lastly, the results of the analysis are printed to the terminal and exported as a text file. Because the results are presented in a standardized format, a function defining the required percentage format is employed.
