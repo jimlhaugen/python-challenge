@@ -1,8 +1,8 @@
 # Module 3 Challenge
 
-This module comprises two challenges.  The first challenge is PyBank which presents a real-world situation in which a financial dataset called budget_data.csv is provided comprising two columns with “Date” and “Profit/Loss” headers and numerous rows. A quick review of the data reveals that the former has a mmm-yr format and the latter has an integer format where negative numbers are preceded with a minus sign.  
+This module comprises two challenges.  This challenge named "PyBank" presents a real-world situation in which a financial dataset called budget_data.csv is provided comprising two columns with “Date” and “Profit/Loss” headers and numerous rows. A quick review of the data reveals that the former has a mmm-yr format and the latter has an integer format where negative numbers are preceded with a minus sign.  
 
-The second challenge is PyPoll which presents a real-world situation of helping a small, rural town modernize its vote-counting process.  Poll data is provided in a dataset called bedget_data.csv comprising three columns with “Ballot ID,” “County,” and “Candidate” headers and a plethora of rows, where each row represents one vote.  A quick review of the data reveals each row of the Candidate column consists of three candidate names: Charles Casper Stockham, Diana DeGette, and Raymon Anthony Doane.   has three candidates reviews of the Dat and Profit/Loss columns reveal that the former has a mmm-yr format and the latter has an integer format where negative numbers are preceded with a minus sign
+A challenge named "PyPoll" of the Module 3 Challenge in which a real-world situation of helping a small, rural town modernize its vote-counting process is employed may be found under the PyPoll directory.
 
 ## PyBank Instructions
 
@@ -52,7 +52,7 @@ Similarly, if the monthly change is a decrease, a determination is made to see i
 
 Fifthly, after all rows have been analyzed upon the completion of the row loop iterations, the value representative of the accumulative change of the profit/loss is identified as the profit/loss over the entire period and used to determine the change over the entire period (or total months).
 
-Lastly, the results of the analysis are printed to the terminal and exported as a text file
+Lastly, the results of the analysis are printed to the terminal and exported as a text file.
 
 
 
