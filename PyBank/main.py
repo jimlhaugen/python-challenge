@@ -11,24 +11,24 @@ GreatestMonthlyIncreaseMonth = '' # records month of greatest monthly increase u
 GreatestMonthlyDecreaseMonth = '' # records month of greatest monthly increase upon its condition
 
                 ### Initialize numerical variables subjected to loops
-TotalMonths = 0                     # keeps count of months by counting each rows with each loop interation
+TotalMonths = 0                     # keeps count of months by counting each rows with each loop iteration
 TotalProfitLoss = 0                 # keeps running cumulation of total profit/loss with each interation
-GreatestMonthlyIncrease = 0         # records greatest monthly increase upon its condition
-GreatestMonthlyDecrease = 0         # records greatest monthly decrease upon its condition
+GreatestMonthlyIncrease = 0         # records the greatest monthly increase upon meeting that condition
+GreatestMonthlyDecrease = 0         # records greatest monthly decrease upon meeting that condition
 MonthlyChange = 0                   # records monthly change between successive interations of loop
 CarryFwdMonthProfitLoss = 0         # carries forward cumulative profit/loss to the next iterantion of loop  
 ProfitLosssBeginningPeriod = 0      # records the first month profit/loss data
-Count = 0                           # used to identify first month for recording ProfitLossBeginningPeriod
+FirstMonthFlag = 0                  # used to flag the first month for recording ProfitLossBeginningPeriod
 ChangeEntirePeriod = 0              # records the accumulative change of profit/loss data for all rows 
 
                 ### Defines input path for budget_data.csv 
 csvpath = os.path.join("Resources", "budget_data.csv")
 
-                ### Open .csv file in READ mode, file object csvfile is converted to a csv.reader object named csvreaderith open(csvpath) as csvfile:
+                ### Open .csv file in READ mode, file object csvfile is converted to a csv.reader object named csvreader
 with open(csvpath) as csvfile:
     csvreader = csv.reader(csvfile, delimiter=',')
 
-                ### Skip the header rwo
+                ### Skip the header row
     header = next(csvreader)
 
                 ### Reads each row of csvreader after the header originally presented in the .csv file 
@@ -38,20 +38,19 @@ with open(csvpath) as csvfile:
         month = row[0]
         profit = row[1]
 
-                ### Ensures the first three characters of string matches one of the 12 month abbreviations in list months
+                ### Confirms the first three characters of string matches one of the 12 month abbreviations in list months
                 ### Begins loop for each row having a good month abbreviation   
         if row[0][:3] in months:   
 
                 ### Performs the following for each row
             TotalMonths = TotalMonths + 1
             TotalProfitLoss = TotalProfitLoss + int(profit)
-            Count = Count + 1
-
             MonthlyChange = int(profit) - CarryFwdMonthProfitLoss 
+            FirstMonthFlag = FirstMonthFlag + 1
 
                 ### Sets a condition for defining the begining profit/loss value
                 ### Used for determining the change over the entire period
-            if Count == 1:
+            if FirstMonthFlag == 1:
                 ProfitLosssBeginningPeriod = int(profit)
 
                 ### Sets a condition which records month (i.e., mmm-yr) having the greatest monthly increase 
